@@ -3,12 +3,18 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'South博客',
   description: '个人博客',
+  locales: {
+    docs: {
+      label: '中文',
+      lang: 'zh'
+    }
+  },
   themeConfig: {
     siteTitle: 'South博客',
     logo: '/logo.svg',
     nav: [
-      { text: 'Guide', link: '/' },
-      { text: 'Config', link: '/getting-started' },
+      { text: '首页', link: '/' },
+      { text: '临时页面', link: '/getting-started' },
       { text: '关于自己', link: '/about' },
     ],
     socialLinks: [
@@ -16,65 +22,34 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Guide',
+        text: '首页',
         collapsed: false,
         items: [
-          { text: 'Guide', link: '/' },
-          { text: 'Config', link: '/getting-started' },
+          { text: '首页', link: '/' },
+          { text: '临时页面', link: '/getting-started' },
           { text: '关于自己', link: '/about' },
         ]
       }
     ],
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You'
+    // 右侧边栏标题
+    outline: 'deep',
+    outlineTitle: '章节导航',
+    // 上下篇文本提示文字
+    docFooter: {
+        prev: '← 上一篇',
+        next: '下一篇 →'
     },
-    algolia: {
-      appId: 'F3AJZXISDY',
-      apiKey: 'bba6573a8fd02dd425483bc466bf9a31 ',
-      indexName: 'south',locales: {
-        zh: {
-          placeholder: '搜索文档',
-          translations: {
-            button: {
-              buttonText: '搜索文档',
-              buttonAriaLabel: '搜索文档'
-            },
-            modal: {
-              searchBox: {
-                resetButtonTitle: '清除查询条件',
-                resetButtonAriaLabel: '清除查询条件',
-                cancelButtonText: '取消',
-                cancelButtonAriaLabel: '取消'
-              },
-              startScreen: {
-                recentSearchesTitle: '搜索历史',
-                noRecentSearchesText: '没有搜索历史',
-                saveRecentSearchButtonTitle: '保存至搜索历史',
-                removeRecentSearchButtonTitle: '从搜索历史中移除',
-                favoriteSearchesTitle: '收藏',
-                removeFavoriteSearchButtonTitle: '从收藏中移除'
-              },
-              errorScreen: {
-                titleText: '无法获取结果',
-                helpText: '你可能需要检查你的网络连接'
-              },
-              footer: {
-                selectText: '选择',
-                navigateText: '切换',
-                closeText: '关闭',
-                searchByText: '搜索提供者'
-              },
-              noResultsScreen: {
-                noResultsText: '无法找到相关结果',
-                suggestedQueryText: '你可以尝试查询',
-                reportMissingResultsText: '你认为该查询应该有结果？',
-                reportMissingResultsLinkText: '点击反馈'
-              }
-            }
-          }
-        }
-      }
-    }
+    // 上次更新时间提示文字
+    lastUpdatedText: '上次更新时间',
+    footer: {
+      message: '',
+      copyright: 'Copyright © 2023 Southliu'
+    },
+    // algolia: {
+    //   appId: 'F3AJZXISDY',
+    //   apiKey: 'aeed316acf949f54f8d94515fd3eccba',
+    //   indexName: 'south',
+    //   placeholder: '搜索文档',
+    // }
   },
 })
